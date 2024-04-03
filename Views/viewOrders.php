@@ -1,5 +1,5 @@
 <?php  
-
+session_start();
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -24,6 +24,7 @@ if (!isset($_SESSION)) {
 
 
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,15 +54,16 @@ if (!isset($_SESSION)) {
 			</thead>
 
 <?php
-require 'connect.php';
-echo '<head><link rel="stylesheet" href="..Assets/medicine.css"></head>';
-$sql = "SELECT * FROM tblorders";
+echo '<head><link rel="stylesheet" href="../Assets/medicine.css"></head>';
+$sql = "SELECT * FROM tblmedicine";
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "dbutibu";
   
 $conn = new mysqli($servername, $username, $password, $database);
+$result = mysqli_query($conn, $sql);
+
 ?>
 <?php 
 	 $j = 1;
@@ -72,21 +74,7 @@ $conn = new mysqli($servername, $username, $password, $database);
         <td><?php echo $value ?></td>
         <td><input type="number" id="order-value" value="1" min="1" name="<?php echo "order" . $j++ ?>" /></td>
         <td><button id='' type="submit" name="delete-order" value="<?php echo $key ?>" class="w3-button w3-red">&times; 
-        	<style> #style{ 
-        		margin:  10px;
-        		margin-left: 0;
-        		padding: 10px 20px 10px 20px;
-        		border-radius: 8px;
-        	}
         	
-        	#style:hover{
-        		background : steelblue;
-        	}
-            button{
-                cursor:pointer;
-            }
-
-        	</style>
         </button></td>
     </tr>
     <?php

@@ -1,5 +1,9 @@
 <?php
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "dbutibu";
 $conn = new mysqli($servername, $username, $password, $database);
 
 if (!isset($_SESSION)) {

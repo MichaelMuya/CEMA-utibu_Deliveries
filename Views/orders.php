@@ -18,6 +18,7 @@
 					<th> </th>
 				</tr>
 			</thead>
+</form>
 <?php
 echo '<head><link rel="stylesheet" href="../Assets/medicine.css"></head>';
 $sql = "SELECT * FROM tblmedicine";
@@ -51,6 +52,5 @@ while ($row = mysqli_fetch_array($result)) {
  ?>
 		</table>
 		</div>
-	</form>
 </body>
 </html>
