@@ -82,11 +82,14 @@ $conn = new mysqli($servername, $username, $password, $database);
         	#style:hover{
         		background : steelblue;
         	}
+            button{
+                cursor:pointer;
+            }
 
         	</style>
         </button></td>
     </tr>
-                                <?php
+    <?php
                                
     }           
 

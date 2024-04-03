@@ -20,7 +20,7 @@
 			</thead>
 <?php
 echo '<head><link rel="stylesheet" href="../Assets/medicine.css"></head>';
-$sql = "SELECT * FROM tblorder";
+$sql = "SELECT * FROM tblmedicine";
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -35,13 +35,13 @@ while ($row = mysqli_fetch_array($result)) {
 	<tr>
 		<form method="POST" action="viewOrders.php">
 		<td> 
-			<img src="<?php echo "asset/".$row['medicineImages']; ?>" alt="Image" width="200px" height="90px">
+			<img src="<?php echo "../Assets/IMAGES".$row['medicineImage']; ?>" alt="Image" width="240px" height="160px">
 		</td> 
 		<td> <?php echo $row['medicineName'] ?> </td>
 		<td> <?php echo $row['medicinePrice'] ?> </td>
 		<input type="number" name="food-id" hidden value="<?php echo $row['id'] ?>">
 		<input type="number" name="price" hidden value="<?php echo $row['medicinePrice'] ?>">
-		<td><button type="submit" name="addFood" value="<?php echo $row['medicineName'] ?> "><i class="fas fa-cart-plus"></i></button></td>
+		<td><button style="cursor:pointer;" type="submit" name="addFood" value="<?php echo $row['medicineName'] ?> "><i class="fas fa-cart-plus"></i></button></td>
 		</form>
 	</tr>
 
