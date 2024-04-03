@@ -1,0 +1,135 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+.container{
+  max-width: 1000px;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+	width: 650px;
+	float: right;
+	border: 1px solid none;
+}
+#orderBtn{
+  width: 10%;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: steelblue;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: sans-serif;
+  cursor: pointer;
+  margin-right: 30px;
+  margin-top: 20px;
+  text-decoration: none;
+
+}
+#profileName{
+  color: #209677;
+  font-weight: bold;
+  font-size: 20px;
+}
+#profileName:hover{
+  color: #092849;
+}
+#utibuDel{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #209677;
+  list-style-type: none;
+}
+h1 span{
+  color: steelblue; 
+  font-weight: bold; 
+}
+
+.box ul{
+  display: flex;
+  align-items: center;
+  gap: 2 rem;
+  list-style: none;
+
+}
+.box ul li {
+	width: 120px; 
+	float: left;
+	margin: 10px auto;
+	text-align: center; 
+}
+.box ul li a{
+	text-decoration: none;
+	color: darkgray;
+}
+.box ul li:hover{
+	background-color: none;
+  border: none;
+  outline: none;
+}
+.box ul li a:hover{
+	color: black;
+	cursor: pointer;
+}
+.box ul li:nth-child(7) {
+  list-style: none;
+	padding: 5px;
+  margin: none;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background-color: steelblue;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.box ul li:nth-child(5):hover {
+	color: steelblue;
+}
+.hero h1{
+  margin-top: 180px;
+  font-size: 55px;
+}
+.hero{
+  display: flex;
+  flex-direction: column;
+}
+.hero img{
+  max-width: 500px;
+  margin-left: 500px;
+  margin-top: -300px;
+}
+.hero button{
+  text-align: center;
+  padding: -50px;
+  outline: none;
+  height: 10vh;
+  margin-top: 50px;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background-color: steelblue;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 150px;
+}
+.hero button:hover{
+  background-color: #209677;
+}

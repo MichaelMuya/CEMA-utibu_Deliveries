@@ -1,0 +1,135 @@
+body{
+	background-color: white;
+	font-family: 'Raleway', sans-serif;
+}
+.wrapper{
+	width: 1200px;
+}
+.title{
+	text-align: center;
+}
+.title .link{
+	width: 30px; 
+	float: left;
+	margin: 10px 10px ;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 20px;
+	text-align: center; 
+	text-decoration: none;
+	color: darkgray;
+	font-size: 15px;
+}
+.title a:hover{
+	background: #fff;
+	color: black;
+	cursor: pointer;
+}
+.title h4{
+	text-transform: capitalize;
+	font-size: 36px;
+	position: relative;
+	display: inline-block;
+	padding-bottom: 0px;
+}
+.title h4 span{
+	display: block;
+	font-size: 18px;
+	font-style: italic;
+	margin-bottom: 10px;
+
+}
+.title h4:before{
+	position: absolute;
+	content: "";
+	width: 100px;
+	height: 2px;
+	background-color: black;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%); 
+
+}
+.menu{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.singleMenu{
+	flex-basis: 580px;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.singleMenu:nth-child(6) img{
+	max-width: 160px;
+	border-bottom: 0;
+} 
+.singleMenu img{
+	max-width: 300px;
+	height: 40%;
+	margin-right: 30px;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	padding: 3px;
+	transition: .5s;
+}
+.singleMenu h4{
+	text-transform: capitalize;
+	font-size: 22px;
+	border-bottom: 1 px dashed #333;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+.singleMenu h4 span{
+	float:  right;
+	color: black;
+	font-style: italic;
+}
+.singleMenu:hover img{
+	border-radius: 0;
+}
+
+/* admin.php */
+a{
+	display: inline-block;
+	border: 1px solid blue;
+	border-radius: 5px;
+    text-decoration: none;
+    margin: 2px;
+    padding: 6px 12px;
+    transition: all 100ns ease;
+}
+a:hover{
+	background: rgb(45, 152, 188);
+	cursor: pointer;
+}
+.flex{
+	display: flex;
+}
+table {
+	float: right;
+    margin-top: 30px;
+    margin-left: 150px;
+ 	z-index: 2;
+ 	width: 70%; 
+ 	border-collapse: collapse;
+	border-spacing: 0;
+	box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px;
+}
+td , th{
+ padding: 15px 20px;
+ text-align: center;
+ }
+ th{
+ background-color: steelblue;
+ color: white;
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+}
+tr{
+ width: 100%;
+}
