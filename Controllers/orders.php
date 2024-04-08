@@ -42,15 +42,22 @@ if (isset($_POST['order'])) {
       
 
         for ($i = 1; $i <= $count; $i++) {
-            $food_id = $_SESSION['orderIDs'][$i - 1];
+         
+            $id = $_SESSION['orderIDs'][$i - 1];
             $price = $_SESSION['price'][$i - 1];
-            $food = $_SESSION['orders'][$i - 1];
-            $quantity = $_POST['order' . $i];
+            $orders = $_SESSION['orders'][$i - 1];
+            $quantities = $_POST['order'];
+
+            $orderKey = 'order' . $i;
+            foreach ($quantities as $index => $quantity) {
+                $orderKey = $index + 1; 
+            }
+            
             $cost = $quantity * $price;
 
             $total_cost += $cost;
 
-            $order_sql = "INSERT INTO `tblorder`(foodID, orderDate, cost, quantity, price, foodName, ID, transcationID) VALUES ($food_id, '$date',$cost,$quantity,$price, '$food',$user_id,$transaction_id)";
+            $order_sql = "INSERT INTO tblorder(medicineID, orderDate, cost, quantity, price, medicineName, ID, transcationID) VALUES ($id, '$date',$cost,$quantity,$price, '$orders',$user_id,$transaction_id)";
 
           
             if ( $conn->query($order_sql) == TRUE) {
@@ -58,13 +65,15 @@ if (isset($_POST['order'])) {
             }
         }
        
+        var_dump($_POST);
+
         $add_cost_sql = "UPDATE `tbltransaction` SET `totalCost` = $total_cost WHERE `transactionID` = $transaction_id";
         $conn->query($add_cost_sql);
 
         $_SESSION['orders'] = [];
         $_SESSION['orderIDs'] = [];
         $_SESSION['price'] = [];
-     header("location: ../Views/homePage.php");
+    //header("location: ../Views/homePage.php");
     }
 
 }

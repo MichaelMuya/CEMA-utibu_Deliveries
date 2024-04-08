@@ -1,5 +1,15 @@
 <?php  
 session_start();
+echo '<head><link rel="stylesheet" href="../Assets/medicine.css"></head>';
+$sql = "SELECT * FROM tblmedicine";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "dbutibu";
+  
+$conn = new mysqli($servername, $username, $password, $database);
+$result = mysqli_query($conn, $sql);
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -24,6 +34,7 @@ if (!isset($_SESSION)) {
 
 
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -53,34 +64,23 @@ if (!isset($_SESSION)) {
 				</tr>
 			</thead>
 
-<?php
-echo '<head><link rel="stylesheet" href="../Assets/medicine.css"></head>';
-$sql = "SELECT * FROM tblmedicine";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "dbutibu";
-  
-$conn = new mysqli($servername, $username, $password, $database);
-$result = mysqli_query($conn, $sql);
 
-?>
 <?php 
 	 $j = 1;
-
+    
     foreach ($_SESSION['orders'] as $key => $value) {
                                 ?>
      <tr>
         <td><?php echo $value ?></td>
-        <td><input type="number" id="order-value" value="1" min="1" name="<?php echo "order" . $j++ ?>" /></td>
+        <td><input type="number" id="order-value" value="1" min="1" name="order[]" /></td>
         <td><button id='' type="submit" name="delete-order" value="<?php echo $key ?>" class="w3-button w3-red">&times; 
         	
         </button></td>
     </tr>
     <?php
-                               
-    }           
-
+                       
+    }       
+    
  ?>
 
 		</table>
